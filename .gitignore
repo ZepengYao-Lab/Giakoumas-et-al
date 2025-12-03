@@ -1,0 +1,10 @@
+# macOS junk
+.DS_Store
+analyses/.DS_Store
+input/.DS_Store
+
+# JetBrains / DataSpell project files
+.idea/
+
+# Local generated output (kept local, not in repo)
+output/
