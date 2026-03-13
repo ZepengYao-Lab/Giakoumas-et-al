@@ -1,0 +1,16 @@
+.idea/
+.vscode/
+.DS_Store
+.cache/
+.local_data/
+.ipynb_checkpoints/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+output/

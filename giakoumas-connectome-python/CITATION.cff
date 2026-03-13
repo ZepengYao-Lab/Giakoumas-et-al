@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this workflow repository, please cite it and also cite the underlying scientific datasets and annotation resources."
+title: "Giakoumas Connectome Workflow"
+version: "0.2.0"
+date-released: 2026-03-19
+type: software
+authors:
+  - family-names: "Giakoumas"
+    given-names: "Dimitrios"
+license: "MIT"
+keywords:
+  - connectomics
+  - drosophila
+  - jupyter
+  - python
+  - r
+abstract: "Standalone notebook and shared-code workflows for the Giakoumas connectome analyses."

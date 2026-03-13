@@ -1,0 +1,50 @@
+root_id,label,name,nt_type,flow,super_class,class,sub_class,cell_type,hemilineage,nerve,connectivity_tag,side,input_synapses,output_synapses
+720575940620885342,[],GNG.2628,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],right,62,111
+720575940629972215,[],GNG.2814,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,79,55
+720575940633660314,[],GNG.2248,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],left,72,153
+720575940609787256,[],GNG.1277,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'; 'rich_club'],right,199,2116
+720575940611643033,[],GNG.1040,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],right,56,2409
+720575940635739504,[],GNG.2589,,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,55,175
+720575940630734393,[],GNG.2812,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],right,48,86
+720575940615015976,[],GNG.1311,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],right,234,692
+720575940612420118,[],GNG.4183,,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,[],left,40,0
+720575940625972261,[],GNG.1160,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],left,235,1064
+720575940622606106,[],GNG.1131,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'rich_club'],left,14,1170
+720575940637019994,[],GNG.1479,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'rich_club'],right,180,499
+720575940626520402,[],GNG.2969,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],left,126,32
+720575940611168921,[],GNG.3014,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],left,35,90
+720575940635005303,[],GNG.2294,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],left,53,176
+720575940617668662,[],GNG.2575,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],right,48,150
+720575940627219272,[],GNG.2752,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'],left,90,41
+720575940632596449,[],GNG.1298,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],left,194,731
+720575940612642730,[],GNG.1214,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'rich_club'],right,16,905
+720575940616934289,[],GNG.1540,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'rich_club'],left,180,504
+720575940636943849,[],GNG.2133,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],left,78,243
+720575940611630194,[],GNG.1750,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],left,165,1085
+720575940620575579,[],GNG.2571,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,81,133
+720575940640611803,[],GNG.3121,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'],right,49,45
+720575940622406694,[],GNG.2327,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],right,57,181
+720575940638054197,[],GNG.2528,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],right,65,97
+720575940634826135,[],GNG.1236,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'; 'rich_club'],left,251,1809
+720575940611351193,[],GNG.2232,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],right,92,159
+720575940616791067,[],GNG.2918,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,66,64
+720575940612819763,[],GNG.2394,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],left,72,138
+720575940630597177,[],GNG.2543,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,61,114
+720575940624186602,[],GNG.3056,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'],right,56,40
+720575940640554045,[],GNG.1469,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'rich_club'],right,161,482
+720575940655071905,[],GNG.1334,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],right,226,594
+720575940621848781,[],GNG.2984,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'],right,50,63
+720575940615879995,[],GNG.2920,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,69,55
+720575940623511795,[],GNG.1270,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],left,212,677
+720575940616196539,[],GNG.1025,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'; 'rich_club'],left,63,2292
+720575940629112887,[],PRW.GNG.59,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,[],right,6,40
+720575940623458633,[],GNG.2371,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],right,65,116
+720575940634667234,[],GNG.2217,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],right,90,153
+720575940625173006,[],GNG.2367,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],left,59,115
+720575940636542565,[],GNG.1993,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],right,111,362
+720575940628344074,[],GNG.1087,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'; 'rich_club'],right,228,1612
+720575940611056482,[],GNG.2069,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'; 'reciprocal'],right,109,319
+720575940620699162,[],GNG.2212,,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['3_cycle_participant'; 'feedforward_loop_participant'],left,79,204
+720575940618889931,[],GNG.3323,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],right,122,15
+720575940618156315,[],GNG.3089,ACH,afferent,sensory,unknown_sensory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'],right,44,52
+720575940610103906,[],GNG.2398,ACH,afferent,sensory,gustatory,accessory_pharyngeal_nerve_sensory_group2,[],,aPhN,['feedforward_loop_participant'; 'reciprocal'],left,79,140

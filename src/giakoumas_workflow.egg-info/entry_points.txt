@@ -1,0 +1,2 @@
+[console_scripts]
+giakoumas-workflow = giakoumas_workflow.cli:main
