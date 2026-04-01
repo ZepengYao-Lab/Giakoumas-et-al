@@ -8,3 +8,12 @@ input/.DS_Store
 
 # Local generated output (kept local, not in repo)
 output/
+
+# Python cache artifacts
+__pycache__/
+*.pyc
+
+# Large local data extracts (use the archived copies instead)
+flywire_data/connections.csv
+giakoumas-connectome-python/data/flywire_data/connections.csv
+giakoumas-connectome-python/.local_data/
