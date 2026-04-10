@@ -1,12 +1,19 @@
-This directory is reserved for reference-data notes only.
+# Reference Data Notes
 
-The public repository intentionally does not bundle third-party FlyWire annotation or connectome cache files.
+This directory is reserved for documentation about reference datasets and local data dependencies.
 
-If you need the R cosine workflows, stage those files into a private local cache with:
+The public repository does not bundle third-party FlyWire annotation or connectome cache files that should remain in a private local cache.
+
+For the R cosine-similarity workflows, prepare the expected local cache with:
 
 ```bash
 Rscript r/setup_private_fafbseg_cache.R
+```
+
+On a clean machine, the minimum required files can be downloaded with:
+
+```bash
 Rscript r/setup_private_fafbseg_cache.R --download
 ```
 
-That command copies the minimum required files into `.local_data/fafbseg/`, which is gitignored and meant for private local use only.
+Those files are staged into `.local_data/fafbseg/`, which is gitignored and intended for local use rather than redistribution.

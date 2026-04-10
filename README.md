@@ -1,27 +1,41 @@
 # Giakoumas et al.
 
-Python and notebook workflows supporting the connectomic analysis in:
+Code, notebooks, and workflow scaffolding for the connectomic analyses in:
 
 **Connectomic mapping of pharyngeal and gut sensory circuits in adult _Drosophila_**  
 Dimitrios S. Giakoumas, Julia M. Zhu, Alaina Jamal, Zepeng Yao  
 DOI: [10.64898/2025.12.14.694216](https://doi.org/10.64898/2025.12.14.694216)
 
-## Repository Status
+## Overview
 
-This repository still contains the original exploratory notebooks in `analyses/`, but it now also includes a **streamlined Python package** for the repeated connectome workflows.
+This repository contains the analysis environment used to generate and inspect the study's connectomic results. It includes:
 
-The new Python surface is designed to be safer and easier to rerun:
+- the original analysis notebooks in [`analyses/`](./analyses)
+- curated input tables in [`input/`](./input)
+- project data tables in [`flywire_data/`](./flywire_data)
+- a root-level Python workflow package in [`src/giakoumas_workflow/`](./src/giakoumas_workflow)
+- a more structured standalone workflow workspace in [`giakoumas-connectome-python/`](./giakoumas-connectome-python)
 
-- The original notebooks are left untouched.
-- R code is untouched.
-- New Python outputs are written under `output/python_workflows/`, not back into `analyses/`.
-- Workflow outputs are namespaced by analysis, which avoids the filename collisions that happen in the notebook-driven workflow.
+The notebook files preserve the analysis logic and figure-generation steps, while the packaged workflows provide a cleaner command-line surface for repeated Python analyses.
 
-## Python Package
+## Repository Layout
 
-The package lives under `src/giakoumas_workflow/` and exposes a small CLI for rerunning the main Python analyses.
+```text
+.
+├── analyses/                     Original notebooks used for analysis and figure generation
+├── flywire_data/                 Project data tables used by the notebooks
+├── input/                        Curated neuron-set inputs
+├── output/                       Generated outputs
+├── src/giakoumas_workflow/       Root-level Python workflow package
+├── tests/                        Tests for the root-level Python workflow package
+└── giakoumas-connectome-python/  Standalone refactored workflow workspace
+```
 
-### Install
+## Root-Level Python Workflows
+
+The root package provides a small command-line interface for rerunning the main Python workflows without editing notebook state.
+
+### Installation
 
 ```bash
 python -m pip install -e .
@@ -33,7 +47,7 @@ python -m pip install -e .
 giakoumas-workflow list
 ```
 
-Available workflows currently map to these notebook-style inputs:
+Current workflow families correspond to these input locations:
 
 - `phn` -> `input/PhN/`
 - `pso-sa` -> `input/PSO_SA/`
@@ -42,68 +56,47 @@ Available workflows currently map to these notebook-style inputs:
 
 ### Run a workflow
 
-Example:
-
 ```bash
 giakoumas-workflow run phn
 ```
 
-This writes results to:
+By default, outputs are written under:
 
-`output/python_workflows/phn/`
+```text
+output/python_workflows/<workflow-name>/
+```
 
-Only numeric workflow inputs such as `set_1.csv`, `set_2.csv`, and so on are included automatically. Auxiliary files like `set_7x.csv` are ignored unless they are promoted into a formal workflow later.
-
-You can also choose a custom output directory:
+Example:
 
 ```bash
 giakoumas-workflow run aphn1 --output-dir output/python_workflows/aphn1
 ```
 
-If you want third-order outputs to exclude first-order sensory IDs explicitly:
+If third-order outputs should exclude first-order sensory identifiers explicitly:
 
 ```bash
 giakoumas-workflow run phn --exclude-first-order-from-third-order
 ```
 
-## What The Workflow Produces
-
-For each set, the Python workflow writes:
-
-- `set_X_second_order_edges.csv`
-- `set_X_second_order_unique_pre_ids.csv`
-- `set_X_second_order_unique_post_ids.csv`
-- `set_X_2Ns_classified.csv`
-- `set_X_third_order_edges.csv`
-- `set_X_third_order_unique_pre_ids.csv`
-- `set_X_third_order_unique_post_ids.csv`
-- `set_X_3Ns.csv`
-
-Each workflow directory also contains:
+Each workflow writes per-set second-order and third-order tables together with:
 
 - `workflow_summary.csv`
 - `workflow_manifest.json`
 
-## What Was Streamlined
+## Standalone Refactored Workspace
 
-The Python package extracts the repeated logic that had been copied across several notebooks:
+The [`giakoumas-connectome-python/`](./giakoumas-connectome-python) subdirectory contains a more structured, notebook-fronted workflow package with shared Python and R code. See its own [README](./giakoumas-connectome-python/README.md) for installation, notebook entry points, and data-cache requirements.
 
-- repository-aware data loading
-- pair-level synapse thresholding
-- second-order neuron extraction
-- first-order overlap cleanup for 2Ns
-- local vs projection classification
-- third-order neuron extraction
-- workflow-specific output directories and summaries
+## Notes On Reproducibility
 
-This makes the Python analysis reproducible without editing notebook state or manually juggling output filenames.
+- Generated outputs are written under [`output/`](./output) or the package-specific output directories.
+- Some workflows rely on local data tables or caches that are not appropriate to redistribute directly.
+- The original notebooks are retained because they document the analysis process and figure assembly used in the project.
 
-## Development
+## Testing
 
-Run the tests with:
+Run the root Python tests with:
 
 ```bash
 pytest
 ```
-
-The current test suite covers the core pairwise-thresholding and workflow-loading behavior in `tests/`.

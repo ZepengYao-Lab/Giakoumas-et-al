@@ -1,17 +1,8 @@
-# Giakoumas Connectome Workflow
+# Giakoumas Connectome Python Workflows
 
-This directory is a standalone, notebook-centered refactor of analyses from the original `Giakoumas-et-al` repository.
+This directory contains a structured analysis workspace for rerunning and extending the Python- and R-based workflows used in the Giakoumas et al. connectome project. It combines shared code, thin notebooks, and workflow-specific output directories in a form that is easier to rerun on a clean machine than the original notebook-only layout.
 
-The goal is to keep the original project untouched while providing a cleaner structure that is closer to a professional analysis repository:
-
-- copied workflow data under `data/`
-- reference-data notes under `data/reference/`
-- reusable Python package code under `src/giakoumas_connectome/`
-- reusable R workflow code under `r/`
-- thin notebooks under `notebooks/`
-- generated tables and figures under `output/`
-
-## Project Layout
+## Layout
 
 ```text
 giakoumas-connectome-python/
@@ -26,7 +17,7 @@ giakoumas-connectome-python/
 └── tests/
 ```
 
-## Install
+## Installation
 
 From this directory:
 
@@ -34,31 +25,85 @@ From this directory:
 python -m pip install -e .
 ```
 
-## Run From The Terminal
+This installs the `giakoumas-connectome` command-line entry point.
 
-List Python workflows:
+## Python Command-Line Workflows
+
+List available workflow families:
 
 ```bash
 giakoumas-connectome list
 ```
 
-Run a Python workflow and export tables plus figures:
+Run a workflow:
 
 ```bash
 giakoumas-connectome run phn
 ```
 
-Outputs are written to:
+Outputs are written under:
+
+```text
+output/<workflow-name>/
+```
+
+For example:
 
 ```text
 output/phn/
 ```
 
-Run the refactored R cosine workflows:
+Each workflow export includes tables, figures, and a manifest describing the generated outputs.
+
+## Notebook Entry Points
+
+The notebooks in [`notebooks/`](./notebooks) are intentionally lightweight. They import the shared package code, execute a workflow or report-building step, and render the resulting tables and figures.
+
+Current notebook entry points are:
+
+- `1-coconatfly-aphn-phn-cosine.ipynb`
+- `2-coconatfly-phn-cosine.ipynb`
+- `3-coconatfly-aphn-cosine.ipynb`
+- `4-phn-connectome-analysis.ipynb`
+- `5-pso-sa-connectome-analysis.ipynb`
+- `5.1-pso-sa-input-connectome-analysis.ipynb`
+- `6-aphn1-sa-connectome-analysis.ipynb`
+- `7-aphn2-sa-connectome-analysis.ipynb`
+- `8-hops-visualization.ipynb`
+- `9-full-hops-figure.ipynb`
+
+## Standard Output Structure
+
+Workflow outputs typically include:
+
+- summary and manifest files
+- per-set second-order and third-order tables
+- workflow-level connectivity matrices
+- figure suites under `figures/`
+
+Notebook-specific exports also populate dedicated output directories for:
+
+- direct-input analyses
+- hop-based sensory-to-motor visualizations
+- portrait Sankey figure assembly
+- refactored R cosine-similarity workflows
+
+## R Cosine Workflows
+
+The cosine-similarity notebooks depend on locally available R packages, including:
+
+- `readr`
+- `dplyr`
+- `coconatfly`
+- `coconat`
+- `fafbseg`
+- `bit64`
+- `glue`
+- `IRkernel` for notebook execution
+
+Run the R workflows with:
 
 ```bash
-Rscript r/setup_private_fafbseg_cache.R
-Rscript r/setup_private_fafbseg_cache.R --download
 Rscript r/run_coconatfly_analysis.R aphn_phn
 Rscript r/run_coconatfly_analysis.R phn
 Rscript r/run_coconatfly_analysis.R aphn aphn1 aphn2
@@ -70,100 +115,35 @@ R outputs are written under:
 output/r_coconatfly/
 ```
 
-## Public Release Notes
+## Data And Cache Handling
 
-- This repository does not bundle third-party FlyWire annotation/connectome cache files.
-- Private local reference data belong in `.local_data/`, which is gitignored.
-- Before redistributing third-party data yourself, verify the upstream license, terms, and citation requirements.
+This repository does not bundle third-party FlyWire annotation or connectome cache files that should remain local.
 
-## Run From A Notebook
+For the R cosine workflows, the expected private cache location is:
 
-The notebooks in `notebooks/` are intentionally thin. They import the shared package code, build a report object, display key tables, and call common plotting functions.
+```text
+.local_data/fafbseg/
+```
 
-Current notebook entry points:
-
-- `4-phn-connectome-analysis.ipynb`
-- `5-pso-sa-connectome-analysis.ipynb`
-- `6-aphn1-sa-connectome-analysis.ipynb`
-- `7-aphn2-sa-connectome-analysis.ipynb`
-- `pso-sa-input-connectome-analysis.ipynb`
-- `8-hops-visualization.ipynb`
-- `9-full-hops-figure.ipynb`
-- `1-coconatfly-aphn-phn-cosine.ipynb`
-- `2-coconatfly-phn-cosine.ipynb`
-- `3-coconatfly-aphn-cosine.ipynb`
-
-This is the intended pattern for adding or maintaining analyses:
-
-1. Keep biological configuration and interpretation in the notebook.
-2. Keep reusable Python logic in `src/giakoumas_connectome/`.
-3. Keep reusable R workflow logic in `r/`.
-4. Reuse the same plotting/report code across notebook families.
-
-## Standard Outputs
-
-Each workflow export includes:
-
-- `tables/workflow_summary.csv`
-- `tables/first_order_set_to_set_matrix.csv`
-- `tables/second_order_set_to_set_matrix.csv`
-- `tables/set_to_second_order_matrix.csv`
-- `tables/second_to_third_order_matrix.csv`
-- per-set input synapse count tables
-- per-set second-order and third-order tables
-- a figure suite under `figures/`, including the restored UpSet plots, 2N-to-2N heatmap, set-to-2N heatmap, 2N-to-3N heatmap, and input/output synapse-count scatter plot
-- `report_manifest.json`
-
-Notebook-specific exports also include:
-
-- `output/pso_sa_input_analysis/` for the direct-input tables and figures derived from `_aPhN_DCSO_input_connectome_analysis_v1.ipynb`
-- `output/hops_visualization/` for the hop-count grid and annotated motor-path CSVs derived from `hops_visualization.ipynb`
-- `output/full_hops_figure/` for the portrait Sankey SVG/HTML derived from `Full_hops_figure.ipynb`
-- `output/r_coconatfly/aphn_phn_cosine/` for the refactored `1_Coconatfly_aPhN_PhN_Cosine.ipynb`
-- `output/r_coconatfly/phn_cosine/` for the refactored `2_Coconatfly_PhN_Cosine.ipynb`
-- `output/r_coconatfly/aphn_cosine/` for the refactored `3_Coconatfly_aPhN_Cosine.ipynb`
-
-## R Workflow Notes
-
-The R cosine notebooks depend on locally available R packages, including:
-
-- `readr`
-- `dplyr`
-- `coconatfly`
-- `coconat`
-- `fafbseg`
-- `bit64`
-- `glue`
-- `IRkernel` for notebook execution
-
-For legal and ethical repo hygiene, this public repository does not bundle third-party FlyWire annotation/connectome cache files. Instead, the R workflows look for those files in one of these places:
-
-- a private gitignored cache at `.local_data/fafbseg/`
-- or a path supplied through `GIAKOUMAS_FAFBSEG_CACHE`
-- or your existing local `fafbseg` user cache
-
-The easiest setup is:
+To populate that cache, run:
 
 ```bash
 Rscript r/setup_private_fafbseg_cache.R
 ```
 
-For a reviewer or any clean machine without a pre-existing local cache, use:
+If a clean machine needs the minimum required files downloaded directly:
 
 ```bash
 Rscript r/setup_private_fafbseg_cache.R --download
 ```
 
-That script either copies from an existing local `fafbseg` cache or downloads the minimum required files directly into `.local_data/fafbseg/`, which is ignored by git and therefore not published with the repository.
-
-Before redistributing any third-party data yourself, verify the upstream license/terms and citation requirements.
+See [`data/reference/README.md`](./data/reference/README.md) and [`THIRD_PARTY_DATA.md`](./THIRD_PARTY_DATA.md) for the corresponding data-handling notes.
 
 ## License And Citation
 
-- Code in this repository is released under the MIT license. See `LICENSE`.
-- If you use this workflow in research output, add a repository citation alongside the underlying scientific data/resource citations. See `CITATION.cff`.
-- Contribution expectations are summarized in `CONTRIBUTING.md`.
-- Third-party data handling notes are in `THIRD_PARTY_DATA.md`.
+- Code in this directory is released under the MIT license. See [`LICENSE`](./LICENSE).
+- Repository citation information is provided in [`CITATION.cff`](./CITATION.cff).
+- Contribution guidance is summarized in [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## Tests
 
@@ -171,10 +151,4 @@ Run:
 
 ```bash
 pytest
-```
-
-The R cosine workflows were validated by running:
-
-```bash
-Rscript r/run_coconatfly_analysis.R phn aphn_phn aphn aphn1 aphn2
 ```
